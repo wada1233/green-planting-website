@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>绿意植树公司</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9;
+        }
+        header {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #4caf50;
+        }
+        nav a {
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #66bb6a;
+        }
+        section {
+            padding: 2em;
+            margin: 1em auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+        h2 {
+            color: #2e7d32;
+        }
+        #game {
+            text-align: center;
+        }
+        #game input {
+            padding: 0.5em;
+            margin: 1em 0;
+            width: 60%;
+            max-width: 300px;
+        }
+        #game button {
+            padding: 0.5em 1em;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #game button:hover {
+            background-color: #66bb6a;
+        }
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #2e7d32;
+            color: white;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>绿意植树公司</h1>
+        <p>让世界更绿，未来更美</p>
+    </header>
+
+    <nav>
+        <a href="#company">公司介绍</a>
+        <a href="#team">团队成员</a>
+        <a href="#game">小猜游戏</a>
+        <a href="#planting">植树团队</a>
+    </nav>
+
+    <section id="company">
+        <h2>公司介绍</h2>
+        <p>绿意植树公司成立于2015年，致力于通过植树造林改善环境，保护生态平衡。我们的使命是为每一片土地增添绿色，为每一座城市带来清新空气。我们提供专业的植树服务，包括城市绿化、荒漠治理和生态修复项目。</p>
+        <p>我们与政府、企业和社区合作，已成功种植超过50万棵树木，为地球的可持续发展贡献力量。</p>
+    </section>
+
+    <section id="team">
+        <h2>团队成员</h2>
+        <p>我们的核心团队由一群热爱自然的专业人士组成，以下是几位主要成员的背景介绍：</p>
+        <ul>
+            <li><strong>张林</strong>：创始人，拥有10年林业管理经验，毕业于北京林业大学，专注于生态修复项目。</li>
+            <li><strong>李芳</strong>：首席园艺师，擅长城市绿化设计，曾参与多个城市公园的植树规划。</li>
+            <li><strong>王强</strong>：项目经理，负责与社区和政府的合作，确保每个植树项目顺利实施。</li>
+        </ul>
+    </section>
+
+    <section id="game">
+        <h2>小猜游戏：你认识这棵树吗？</h2>
+        <p>提示：我是一种常见的树木，我的叶子像手掌一样有五片，秋天会变成金黄色，我是什么树？</p>
+        <input type="text" id="guessInput" placeholder="输入你的答案"/>
+        <br />
+        <button onclick="checkAnswer()">提交答案</button>
+        <p id="result"></p>
+    </section>
+
+    <section id="planting">
+        <h2>植树团队</h2>
+        <p>我们的植树团队由20名成员组成，包括林业专家、园艺师和志愿者。我们每年组织多次植树活动，欢迎社区居民和企业参与，共同为环境保护贡献力量。</p>
+        <p>团队口号：一棵树，一片绿，共建美好家园！</p>
+        <p>联系我们：<br>邮箱：contact@greenplanting.com <br>电话：123-456-7890</p>
+    </section>
+
+    <footer>
+        <p>© 2025 绿意植树公司 | 让世界更绿，未来更美</p>
+    </footer>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById("guessInput").value.trim().toLowerCase();
+            const result = document.getElementById("result");
+            if (answer === "枫树" || answer === "枫" || answer === "maple") {
+                result.textContent = "🎉 恭喜你，答对了！我是枫树！";
+                result.style.color = "#2e7d32";
+            } else {
+                result.textContent = "❌ 很遗憾，答错了。我是枫树！再试试其他题目吧！";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
